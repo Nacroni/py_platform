@@ -1,10 +1,10 @@
-.\" manpage for pyplatform
+.\" manpage for py_platform
 .\" contact me at thespokenone209@hotmail.com for issues.
 .\" nacroni - fyi the name for default stuff is General Commands Manual
-.TH pyplatform 1 "5 Dec 2024" "main Branch" "pyplatform Manual"
+.TH py_platform 1 "18 Dec 2024" "main Branch" "py_platform Manual"
 
 .SH NAME
-.B pyplatform 
+.B py_platform 
 - a command to get platform information
 
 .SH SYNOPSIS
@@ -12,20 +12,20 @@
 [ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -w ] [ --win32 ] [ -m ] [ --mac ]
 
 .SH DESCRIPTION
-.B pyplatform
+.B py_platform
 is a Python script that shows information about your current system using the platform module.
 
 .SH EXAMPLES
-.B pyplatform
+.B py_platform
 
-.B pyplatform
+.B py_platform
 -wfm /
-.B pyplatform
+.B py_platform
 --win32 --freedesktop --mac
 
-.B pyplatform
+.B py_platform
 -h /
-.B pyplatform
+.B py_platform
 --help
 
 .SH COMMAND LINE OPTIONS

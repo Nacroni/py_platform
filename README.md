@@ -1,12 +1,12 @@
-# `pyplatform`
+# `py_platform`
 
-`pyplatform` is a script that shows information about your system. It mainly uses the `platform` module in Python.
+`py_platform` is a script that shows information about your system. It mainly uses the `platform` module in Python.
 
 ## Usage
 
 ### Running 
 
-You can use `pyplatform` by opening it through [Python](https://python.org/). *Latest version of Python used was [`3.11.11`](https://www.python.org/downloads/release/python-31111/)*
+You can use `py_platform` by opening it through [Python](https://python.org/). *Latest version of Python used was [`3.11.11`](https://www.python.org/downloads/release/python-31111/)*
 
 ### Arguments
 
