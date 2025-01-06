@@ -8,7 +8,7 @@
 - a command to get platform information
 
 .SH SYNOPSIS
-.B pyplatform 
+.B py_platform 
 [ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -w ] [ --win32 ] [ -m ] [ --mac ]
 
 .SH DESCRIPTION
