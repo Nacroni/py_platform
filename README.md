@@ -6,7 +6,7 @@
 
 ### Running 
 
-You can use `py_platform` by opening it through [Python](https://python.org/). *Latest version of Python used was [`3.11.11`](https://www.python.org/downloads/release/python-31111/)*
+You can use `py_platform` by opening it through [Python](https://python.org/). *Latest version of Python used was [`3.13`](https://www.python.org/downloads/release/python-3130/)*
 
 ### Arguments
 
