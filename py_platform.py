@@ -3,24 +3,26 @@ import platform, argparse, os, time
 
 # This allows for the user to pass arguments to the script, allowing for certain information to be shown:
 parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2025-01-06 ; by Nacroni')
-parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information in /etc/os-release (may crash script!)', action='store_true')
+parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information in /etc/os-release', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
 args = parser.parse_args()
 
 # This allows the script to see whether or not a certain argument is enabled.
 freedesktop_enable = args.freedesktop
+if freedesktop_enable == True and not os.path.exists('/etc/os-release'): # if the argument is true but the file that platform reads doesnt exist
+    print('freedesktop argument called yet /etc/os-release doesn\'t exist! Turning off argument...')
+    freedesktop_enable = False # turns off argument to prevent a crash that can happen with PyDroid3
 win32_enable = args.win32
 mac_enable = args.mac
 
 print('System Information')
 
-# I'm sorry about the method I use for variables, but this method is more interesting to me tbh =3
+# I'm sorry about the method I use for variables, but it does the job. =3
 system = platform.system()
 user = os.getlogin()
 hostname = platform.node()
 uptime_monotonic = time.monotonic()
-if system == 'Linux': uptime_boottime = time.clock_gettime(time.CLOCK_BOOTTIME)
 release = platform.release()
 version = platform.version()
 machine = platform.machine()
@@ -32,7 +34,6 @@ print(f'    System:       {system}'          )
 print(f'    User:         {user}'            )
 print(f'    Hostname:     {hostname}'        )
 print(f'    Uptime Awake: {uptime_monotonic}')
-if system == 'Linux': print(f'    Uptime:       {uptime_boottime}')
 print(f'    Release:      {release}'         )
 print(f'    Version:      {version}'         )
 print(f'    Machine:      {machine}'         )
@@ -42,7 +43,7 @@ print(f'    Proc. Amount: {processor_count}' )
 if freedesktop_enable: # If the 'freedesktop' argument is used...
     print()
     print('freedesktop.org Information')
-    freedesktop_release = platform.freedesktop_os_release() # This method prevents a crash even if the argument isnt called. Only when the argument is called then it'll crash if it does.
+    freedesktop_release = platform.freedesktop_os_release()
     print(f'    OS Release: {freedesktop_release}')
 
 if 'Windows' in system or win32_enable: # If the user is running Windows or the Win32 argument is used...

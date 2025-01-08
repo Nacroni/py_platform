@@ -12,9 +12,6 @@ You can use `py_platform` by opening it through [Python](https://python.org/). *
 
 #### Freedesktop OS Release info : `-f`, `--freedesktop`
 
-> [!WARNING]
-> This argument may crash the script if your computer does not have the `/etc/os-release` file.
-
 This argument shows the output of `platform.freedesktop_os_release()`, which shows JSON-formatted information about your system from `/etc/os-release`.
 
 #### Win32 info : `-w`, `--win32`
