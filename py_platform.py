@@ -2,7 +2,7 @@
 import platform, argparse, os, time
 
 # This allows for the user to pass arguments to the script, allowing for certain information to be shown:
-parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2025-01-06 ; by Nacroni')
+parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2025-01-11 ; by Nacroni')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information in /etc/os-release', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
@@ -56,9 +56,9 @@ if 'Windows' in system or win32_enable: # If the user is running Windows or the 
     print(f'    Edition: {win32_ed}'    )
     print(f'    Is IoT:  {win32_is_iot}')
     
-if 'macOS' in system or 'Mac' in system or mac_enable: # If the user is running macOS/Mac OS or the Mac argument is used...
+if 'Darwin' in system or mac_enable: # If the user is running macOS/Mac OS or the Mac argument is used...
     print()
-    print('macOS Information')
+    print('macOS / Darwin Information')
     mac_ver = platform.mac_ver()
     print(f'    Version: {mac_ver}')
 

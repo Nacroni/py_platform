@@ -24,7 +24,7 @@ This argument shows the output of `platform.win32_ver()`, `platform.win32_editio
 
 - **`platform.win32_is_iot()`** / **Is IoT / Is Embedded**: Shows whether or not your system is Windows IoT/Embedded (?)
 
-#### macOS info : `-m`, `--mac`
+#### macOS / Darwin info : `-m`, `--mac`
 
 This argument shows the output of `platform.mac_ver()`.
 
