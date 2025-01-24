@@ -12,7 +12,7 @@ args = parser.parse_args()
 freedesktop_enable = args.freedesktop
 if freedesktop_enable == True and not os.path.exists('/etc/os-release'): # if the argument is true but the file that platform reads doesnt exist
     print('freedesktop argument called yet /etc/os-release doesn\'t exist! Turning off argument...')
-    freedesktop_enable = False # turns off argument to prevent a crash that can happen with PyDroid3
+    freedesktop_enable = False # turns off argument to prevent crashes that may happen with linux oses without /etc/os-release
 win32_enable = args.win32
 mac_enable = args.mac
 
@@ -56,7 +56,7 @@ if 'Windows' in system or win32_enable: # If the user is running Windows or the 
     print(f'    Edition: {win32_ed}'    )
     print(f'    Is IoT:  {win32_is_iot}')
     
-if 'Darwin' in system or mac_enable: # If the user is running macOS/Mac OS or the Mac argument is used...
+if 'Darwin' in system or mac_enable: # If the user is running Darwin or the Mac argument is used...
     print()
     print('macOS / Darwin Information')
     mac_ver = platform.mac_ver()
