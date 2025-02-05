@@ -1,6 +1,6 @@
 .\" manpage for py_platform
 .\" groff, troff, whatever. view it with man
-.TH py_platform 1 "31 Jan 2025" "novars Branch" "py_platform Manual"
+.TH py_platform 1 "05 Feb 2025" "main Branch" "py_platform Manual"
 
 .SH NAME
 .B py_platform 
