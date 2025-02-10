@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
-import platform, argparse, os, time
+import platform, argparse, os, time, logging
 
 # This allows for the user to pass arguments to the script, allowing for certain information to be shown:
-parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2025-02-05 ; by Nacroni')
+parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2025-02-10 ; by Nacroni')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information in /etc/os-release', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
 args = parser.parse_args()
 
+logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.DEBUG)
+
 # This allows the script to see whether or not a certain argument is enabled.
 freedesktop_enable = args.freedesktop
 if freedesktop_enable == True and not os.path.exists('/etc/os-release'): # if the argument is true but the file that platform reads doesnt exist
-    print('freedesktop argument called yet /etc/os-release doesn\'t exist! Turning off argument...')
+    logging.warning('freedesktop argument called yet /etc/os-release doesn\'t exist!')
+    logging.info('turning off freedesktop argument...')
     freedesktop_enable = False # turns off argument to prevent crashes that may happen with linux-identifying oses without /etc/os-release
 win32_enable = args.win32
 mac_enable = args.mac
