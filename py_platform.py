@@ -2,10 +2,11 @@
 import platform, argparse, os, time, logging
 
 # This allows for the user to pass arguments to the script, allowing for certain information to be shown:
-parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2025-02-10 ; by Nacroni')
+parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; updated 2025-02-18 ; by Nacroni')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information in /etc/os-release', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
+parser.add_argument('-o', '--other', help='prints other information', action='store_true')
 args = parser.parse_args()
 
 logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.DEBUG)
@@ -18,19 +19,21 @@ if freedesktop_enable == True and not os.path.exists('/etc/os-release'): # if th
     freedesktop_enable = False # turns off argument to prevent crashes that may happen with linux-identifying oses without /etc/os-release
 win32_enable = args.win32
 mac_enable = args.mac
+other_enable = args.other
 
 print('System Information')
 
-#    (f'    name:             {var}'                 )
-print(f'    System:           {platform.system()}'   )
-print(f'    User:             {os.getlogin()}'       )
-print(f'    Hostname:         {platform.node()}'     )
-print(f'    Uptime Monotonic: {time.monotonic()}'    )
-print(f'    Release:          {platform.release()}'  )
-print(f'    Version:          {platform.version()}'  )
-print(f'    Machine:          {platform.machine()}'  )
-print(f'    Processor:        {platform.processor()}')
-print(f'    CPU Count:        {os.cpu_count()}'      )
+#    (f'    name:             {var}'                    )
+print(f'    System:           {platform.system()}'      )
+print(f'    User:             {os.getlogin()}'          )
+print(f'    Hostname:         {platform.node()}'        )
+print(f'    Uptime Monotonic: {time.monotonic()}'       )
+print(f'    Release:          {platform.release()}'     )
+print(f'    Version:          {platform.version()}'     )
+print(f'    Machine:          {platform.machine()}'     )
+print(f'    Processor:        {platform.processor()}'   )
+print(f'    Architecture:     {platform.architecture()}')
+print(f'    CPU Count:        {os.cpu_count()}'         )
 
 if freedesktop_enable: # If the 'freedesktop' argument is used...
     print()
@@ -63,3 +66,10 @@ print(f'    Build:          {platform.python_build()}'         )
 print(f'    Compiler:       {platform.python_compiler()}'      )
 print(f'    Implementation: {platform.python_implementation()}')
 print(f'    Revision:       {platform.python_revision()}'      )
+
+if other_enable:
+  print()
+  print('Other Information')
+  #    (f'    name:         {var}'                )
+  print(f'    Java Version: {platform.java_ver()}')
+  print(f'    libc Version: {platform.libc_ver()}')

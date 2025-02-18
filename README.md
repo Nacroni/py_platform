@@ -40,6 +40,10 @@ This argument shows the output of `platform.mac_ver()`.
 
 - **`platform.mac_ver()`** / **Version**: Shows the version of macOS you are running.
 
+#### Other info : `-o`, `--other`
+
+This argument shows the output of `platform.java_ver()` and `platform.libc_ver()`.
+
 #### Help : `-h`, `--help`
 
 This argument shows help about how to use the script.

@@ -1,6 +1,6 @@
 .\" manpage for py_platform
 .\" groff, troff, whatever. view it with man
-.TH py_platform 1 "10 Feb 2025" "main Branch" "py_platform Manual"
+.TH py_platform 1 "18 Feb 2025" "main Branch" "py_platform Manual"
 
 .SH NAME
 .B py_platform 
@@ -8,7 +8,7 @@
 
 .SH SYNOPSIS
 .B py_platform 
-[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -w ] [ --win32 ] [ -m ] [ --mac ]
+[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -w ] [ --win32 ] [ -m ] [ --mac ] [ -o ] [ --other ]
 
 .SH DESCRIPTION
 .B py_platform
@@ -18,9 +18,9 @@ is a Python script that shows information about your current system using the pl
 .B py_platform
 
 .B py_platform
--wfm /
+-wfmo /
 .B py_platform
---win32 --freedesktop --mac
+--win32 --freedesktop --mac --other
 
 .B py_platform
 -h /
@@ -40,6 +40,9 @@ Shows win32 information in the normal output
 
 .SS -m, --mac
 Shows macOS information in the normal output
+
+.SS -o, --other
+Shows other information in the normal output
 
 .SH AUTHOR
 .SS Owner / Creator
