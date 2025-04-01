@@ -24,9 +24,14 @@ You can use `py_platform` by opening it through [Python](https://python.org/). *
 
 This argument shows the output of `platform.freedesktop_os_release()`, which shows JSON-formatted information about your system from `/etc/os-release`.
 
-#### Linux info : `-l`, `--linux`
+#### Android info : `-a`, `--android`
 
 This argument shows the output of `platform.android_ver()`.
+
+> [!IMPORTANT]
+> Not every Python version supports this.
+
+- **`platform.android_ver()`** / **Version**: Shows the version of Android you are running.
 
 #### Win32 info : `-w`, `--win32`
 
@@ -38,11 +43,16 @@ This argument shows the output of `platform.win32_ver()`, `platform.win32_editio
 
 - **`platform.win32_is_iot()`** / **Is IoT / Is Embedded**: Shows whether or not your system is Windows IoT/Embedded (?)
 
-#### macOS / Darwin info : `-m`, `--mac`
+#### Darwin info : `-d`, `--darwin`
 
-This argument shows the output of `platform.mac_ver()`.
+This argument shows the output of `platform.mac_ver()` and `platform.ios_ver()`.
 
-- **`platform.mac_ver()`** / **Version**: Shows the version of macOS you are running.
+- **`platform.mac_ver()`** / **Mac Version**: Shows the version of macOS you are running.
+
+> [!IMPORTANT]
+> Not every Python version supports this argument.
+
+- **`platform.ios_ver()`** / **iOS Version**: Shows the version of iOS you are running.
 
 #### Other info : `-o`, `--other`
 

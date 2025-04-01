@@ -1,6 +1,6 @@
 .\" manpage for py_platform
 .\" groff, troff, whatever. view it with man
-.TH py_platform 1 "18 Feb 2025" "main Branch" "py_platform Manual"
+.TH py_platform 1 "01 Apr 2025" "main Branch" "py_platform Manual"
 
 .SH NAME
 .B py_platform 
@@ -8,7 +8,7 @@
 
 .SH SYNOPSIS
 .B py_platform 
-[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -l ] [ --linux ] [ -w ] [ --win32 ] [ -m ] [ --mac ] [ -o ] [ --other ]
+[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -a ] [ --android ] [ -w ] [ --win32 ] [ -d ] [ --darwin ] [ -o ] [ --other ]
 
 .SH DESCRIPTION
 .B py_platform
@@ -18,9 +18,9 @@ is a Python script that shows information about your current system using the pl
 .B py_platform
 
 .B py_platform
--flwmo /
+-fawdo /
 .B py_platform
---freedesktop --linux --win32  --mac --other
+--freedesktop --android --win32 --darwin --other
 
 .B py_platform
 -h /
@@ -35,14 +35,14 @@ Shows help and exits
 .SS -f, --freedesktop
 Shows freedesktop.org OS release information from /etc/os-release in JSON in the normal output
 
-.SS -l, --linux
-Shows Linux information in the normal output
+.SS -a, --android
+Shows Android information in the normal output
 
 .SS -w, --win32
 Shows win32 information in the normal output
 
-.SS -m, --mac
-Shows macOS information in the normal output
+.SS -d, --darwin
+Shows Darwin information in the normal output
 
 .SS -o, --other
 Shows other information in the normal output

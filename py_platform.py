@@ -4,9 +4,9 @@ import platform, argparse, os, time, logging
 # This allows for the user to pass arguments to the script, allowing for certain information to be shown:
 parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; by Nacroni')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information in /etc/os-release', action='store_true')
-parser.add_argument('-l', '--linux', help='prints Linux information', action='store_true')
+parser.add_argument('-a', '--android', help='prints Android information', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
-parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
+parser.add_argument('-d', '--darwin', help='prints Darwin information', action='store_true')
 parser.add_argument('-o', '--other', help='prints other information', action='store_true')
 args = parser.parse_args()
 
@@ -18,9 +18,9 @@ if freedesktop_enable == True and not os.path.exists('/etc/os-release'): # if th
   logging.warning('freedesktop argument called yet /etc/os-release doesn\'t exist!')
   logging.info('turning off freedesktop argument...')
   freedesktop_enable = False # turns off argument to prevent crashes that may happen with linux-identifying oses without /etc/os-release
-linux_enable = args.linux
+android_enable = args.android
 win32_enable = args.win32
-mac_enable = args.mac
+darwin_enable = args.darwin
 other_enable = args.other
 
 print('System Information')
@@ -43,11 +43,11 @@ if freedesktop_enable: # If the 'freedesktop' argument is used...
   #    (f'    name:       {var}'                              )
   print(f'    OS Release: {platform.freedesktop_os_release()}')
 
-if 'Linux' in platform.system() or linux_enable: # If the user is running Linux or the Linux argument is used.
+if android_enable: # If the Android argument is used...
   print()
-  print('Linux Information')
-  #    (f'    name:            {var}'                   )
-  print(f'    Android Version: {platform.android_ver()}')
+  print('Android Information')
+  #    (f'    name:            {var}'           )
+  print(f'    Version: {platform.android_ver()}')
 
 if 'Windows' in platform.system() or win32_enable: # If the user is running Windows or the Win32 argument is used...
   print()
@@ -57,7 +57,7 @@ if 'Windows' in platform.system() or win32_enable: # If the user is running Wind
   print(f'    Edition: {platform.win32_edition()}')
   print(f'    Is IoT:  {platform.win32_is_iot()}' )
     
-if 'Darwin' in platform.system() or mac_enable: # If the user is running Darwin or the Mac argument is used...
+if 'Darwin' in platform.system() or darwin_enable: # If the user is running Darwin or the Mac argument is used...
   print()
   print('Darwin Information')
   #    (f'    name:        {var}'               )
