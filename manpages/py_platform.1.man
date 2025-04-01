@@ -8,7 +8,7 @@
 
 .SH SYNOPSIS
 .B py_platform 
-[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -w ] [ --win32 ] [ -m ] [ --mac ] [ -o ] [ --other ]
+[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -l ] [ --linux ] [ -w ] [ --win32 ] [ -m ] [ --mac ] [ -o ] [ --other ]
 
 .SH DESCRIPTION
 .B py_platform
@@ -18,9 +18,9 @@ is a Python script that shows information about your current system using the pl
 .B py_platform
 
 .B py_platform
--wfmo /
+-flwmo /
 .B py_platform
---win32 --freedesktop --mac --other
+--freedesktop --linux --win32  --mac --other
 
 .B py_platform
 -h /
@@ -34,6 +34,9 @@ Shows help and exits
 
 .SS -f, --freedesktop
 Shows freedesktop.org OS release information from /etc/os-release in JSON in the normal output
+
+.SS -l, --linux
+Shows Linux information in the normal output
 
 .SS -w, --win32
 Shows win32 information in the normal output

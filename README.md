@@ -24,6 +24,10 @@ You can use `py_platform` by opening it through [Python](https://python.org/). *
 
 This argument shows the output of `platform.freedesktop_os_release()`, which shows JSON-formatted information about your system from `/etc/os-release`.
 
+#### Linux info : `-l`, `--linux`
+
+This argument shows the output of `platform.android_ver()`.
+
 #### Win32 info : `-w`, `--win32`
 
 This argument shows the output of `platform.win32_ver()`, `platform.win32_edition()`, and `platform.win32_is_iot()`.

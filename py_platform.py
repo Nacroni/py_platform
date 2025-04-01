@@ -4,6 +4,7 @@ import platform, argparse, os, time, logging
 # This allows for the user to pass arguments to the script, allowing for certain information to be shown:
 parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; by Nacroni')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information in /etc/os-release', action='store_true')
+parser.add_argument('-l', '--linux', help='prints Linux information', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-m', '--mac', help='prints macOS information', action='store_true')
 parser.add_argument('-o', '--other', help='prints other information', action='store_true')
@@ -17,6 +18,7 @@ if freedesktop_enable == True and not os.path.exists('/etc/os-release'): # if th
   logging.warning('freedesktop argument called yet /etc/os-release doesn\'t exist!')
   logging.info('turning off freedesktop argument...')
   freedesktop_enable = False # turns off argument to prevent crashes that may happen with linux-identifying oses without /etc/os-release
+linux_enable = args.linux
 win32_enable = args.win32
 mac_enable = args.mac
 other_enable = args.other
@@ -41,6 +43,12 @@ if freedesktop_enable: # If the 'freedesktop' argument is used...
   #    (f'    name:       {var}'                              )
   print(f'    OS Release: {platform.freedesktop_os_release()}')
 
+if 'Linux' in platform.system() or linux_enable: # If the user is running Linux or the Linux argument is used.
+  print()
+  print('Linux Information')
+  #    (f'    name:            {var}'                   )
+  print(f'    Android Version: {platform.android_ver()}')
+
 if 'Windows' in platform.system() or win32_enable: # If the user is running Windows or the Win32 argument is used...
   print()
   print('Windows (Win32) Information')
@@ -52,8 +60,9 @@ if 'Windows' in platform.system() or win32_enable: # If the user is running Wind
 if 'Darwin' in platform.system() or mac_enable: # If the user is running Darwin or the Mac argument is used...
   print()
   print('Darwin Information')
-  #    (f'    name:    {var}'    )
-  print(f'    Version: {platform.mac_ver()}')
+  #    (f'    name:        {var}'               )
+  print(f'    Mac Version: {platform.mac_ver()}')
+  print(f'    iOS Version: {platform.ios_ver()}')
 
 print()
 print('Python Information')
