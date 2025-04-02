@@ -26,10 +26,10 @@ This argument shows the output of `platform.freedesktop_os_release()`, which sho
 
 #### Android info : `-a`, `--android`
 
-This argument shows the output of `platform.android_ver()`.
-
 > [!IMPORTANT]
-> Not every Python version supports this.
+> Not every Python version supports this argument.
+
+This argument shows the output of `platform.android_ver()`.
 
 - **`platform.android_ver()`** / **Version**: Shows the version of Android you are running.
 
@@ -45,12 +45,16 @@ This argument shows the output of `platform.win32_ver()`, `platform.win32_editio
 
 #### Darwin info : `-d`, `--darwin`
 
-This argument shows the output of `platform.mac_ver()` and `platform.ios_ver()`.
+This argument shows the output of `platform.mac_ver()`.
 
 - **`platform.mac_ver()`** / **Mac Version**: Shows the version of macOS you are running.
 
+#### iOS info : `-i`, `--ios`
+
 > [!IMPORTANT]
 > Not every Python version supports this argument.
+
+This argument shows the output of `platform.ios_ver()`.
 
 - **`platform.ios_ver()`** / **iOS Version**: Shows the version of iOS you are running.
 

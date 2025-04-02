@@ -7,6 +7,7 @@ parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS r
 parser.add_argument('-a', '--android', help='prints Android information', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-d', '--darwin', help='prints Darwin information', action='store_true')
+parser.add_argument('-i', '--ios', help='prints iOS information', action='store_true')
 parser.add_argument('-o', '--other', help='prints other information', action='store_true')
 args = parser.parse_args()
 
@@ -21,6 +22,7 @@ if freedesktop_enable == True and not os.path.exists('/etc/os-release'): # if th
 android_enable = args.android
 win32_enable = args.win32
 darwin_enable = args.darwin
+ios_enable = args.ios
 other_enable = args.other
 
 print('System Information')
@@ -62,6 +64,11 @@ if 'Darwin' in platform.system() or darwin_enable: # If the user is running Darw
   print('Darwin Information')
   #    (f'    name:        {var}'               )
   print(f'    Mac Version: {platform.mac_ver()}')
+
+if ios_enable: # If the iOS argument is used...
+  print()
+  print('iOS Information')
+  #    (f'    name:        {var}'               )
   print(f'    iOS Version: {platform.ios_ver()}')
 
 print()
