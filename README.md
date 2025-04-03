@@ -8,7 +8,7 @@
 > All of these are packed in with Python by default, meaning that there is no need for installing other modules.
 
 - `platform`
-- `argparse` (Python 3.2 and above)
+- `argparse` *Python 3.2 and above*
 - `os`
 - `time`
 
@@ -16,7 +16,7 @@
 
 ### Running
 
-You can use `py_platform` by opening it through [Python](https://python.org/). *Latest version of Python used was [`3.13.1`](https://www.python.org/downloads/release/python-3131/), oldest version of Python used was [`3.11.11`](https://www.python.org/downloads/release/python-31111/) **(This doesn't mean older versions of Python can't be used!)***
+You can use `py_platform` by opening it through [Python](https://python.org/). *Latest version of Python used was [`3.13.2`](https://www.python.org/downloads/release/python-3132/), oldest version of Python used was [`3.11.11`](https://www.python.org/downloads/release/python-31111/) **(This doesn't mean older versions of Python can't be used!)***
 
 ### Arguments
 

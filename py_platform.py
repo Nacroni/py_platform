@@ -40,39 +40,33 @@ print(f'    Architecture:     {platform.architecture()}')
 print(f'    CPU Count:        {os.cpu_count()}'         )
 
 if freedesktop_enable: # If the 'freedesktop' argument is used...
-  print()
-  print('freedesktop.org Information')
+  print('\nfreedesktop.org Information')
   #    (f'    name:       {var}'                              )
   print(f'    OS Release: {platform.freedesktop_os_release()}')
 
 if android_enable: # If the Android argument is used...
-  print()
-  print('Android Information')
-  #    (f'    name:            {var}'           )
+  print('\nAndroid Information')
+  #    (f'    name:    {var}'           )
   print(f'    Version: {platform.android_ver()}')
 
 if 'Windows' in platform.system() or win32_enable: # If the user is running Windows or the Win32 argument is used...
-  print()
-  print('Windows (Win32) Information')
+  print('\nWindows (Win32) Information')
   #    (f'    name:    {var}'                     )
   print(f'    Version: {platform.win32_ver()}'    )
   print(f'    Edition: {platform.win32_edition()}')
   print(f'    Is IoT:  {platform.win32_is_iot()}' )
     
 if 'Darwin' in platform.system() or darwin_enable: # If the user is running Darwin or the Mac argument is used...
-  print()
-  print('Darwin Information')
+  print('\nDarwin Information')
   #    (f'    name:        {var}'               )
   print(f'    Mac Version: {platform.mac_ver()}')
 
 if ios_enable: # If the iOS argument is used...
-  print()
-  print('iOS Information')
+  print('\niOS Information')
   #    (f'    name:        {var}'               )
   print(f'    iOS Version: {platform.ios_ver()}')
 
-print()
-print('Python Information')
+print('\nPython Information')
 
 #    (f'    name:           {var}'                             )
 print(f'    Version:        {platform.python_version()}'       )
@@ -83,8 +77,7 @@ print(f'    Implementation: {platform.python_implementation()}')
 print(f'    Revision:       {platform.python_revision()}'      )
 
 if other_enable:
-  print()
-  print('Other Information')
+  print('\nOther Information')
   #    (f'    name:         {var}'                )
   print(f'    Java Version: {platform.java_ver()}')
   print(f'    libc Version: {platform.libc_ver()}')
