@@ -1,6 +1,6 @@
 .\" manpage for py_platform
 .\" groff, troff, whatever. view it with man
-.TH py_platform 1 "03 Apr 2025" "main Branch" "py_platform Manual"
+.TH py_platform 1 "04 Apr 2025" "main Branch" "py_platform Manual"
 
 .SH NAME
 .B py_platform 
@@ -33,7 +33,7 @@ is a Python script that shows information about your current system using the pl
 Shows help and exits
 
 .SS -f, --freedesktop
-Shows freedesktop.org OS release information from /etc/os-release in JSON in the normal output
+Shows freedesktop.org OS release information in JSON in the normal output
 
 .SS -a, --android
 Shows Android information in the normal output

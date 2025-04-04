@@ -22,7 +22,7 @@ You can use `py_platform` by opening it through [Python](https://python.org/). *
 
 #### Freedesktop OS Release info : `-f`, `--freedesktop`
 
-This argument shows the output of `platform.freedesktop_os_release()`, which shows JSON-formatted information about your system from `/etc/os-release`.
+This argument shows the output of `platform.freedesktop_os_release()`, which shows JSON-formatted information about your system.
 
 #### Android info : `-a`, `--android`
 
