@@ -23,17 +23,17 @@ other_enable = args.other
 
 print('System Information')
 
-#    (f'    name:         {var}'                    )
-print(f'    System:       {platform.system()}'      )
-print(f'    User:         {os.getlogin()}'          )
-print(f'    Hostname:     {platform.node()}'        )
-print(f'    Monotonic:    {time.monotonic()}'       )
-print(f'    Release:      {platform.release()}'     )
-print(f'    Version:      {platform.version()}'     )
-print(f'    Machine:      {platform.machine()}'     )
-print(f'    Processor:    {platform.processor()}'   )
-print(f'    Architecture: {platform.architecture()}')
-print(f'    CPU Count:    {os.cpu_count()}'         )
+#    (f'    name:            {var}'                    )
+print(f'    System:          {platform.system()}'      )
+print(f'    User:            {os.getlogin()}'          )
+print(f'    Hostname:        {platform.node()}'        )
+print(f'    Monotonic Clock: {time.monotonic()}'       )
+print(f'    Release:         {platform.release()}'     )
+print(f'    Version:         {platform.version()}'     )
+print(f'    Machine:         {platform.machine()}'     )
+print(f'    Processor:       {platform.processor()}'   )
+print(f'    Architecture:    {platform.architecture()}')
+print(f'    CPU Count:       {os.cpu_count()}'         )
 
 if freedesktop_enable: # If the 'freedesktop' argument is used...
   print('\nfreedesktop.org Information')
