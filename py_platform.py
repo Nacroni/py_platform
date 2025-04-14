@@ -23,7 +23,12 @@ ios_enable = args.ios
 other_enable = args.other
 
 if args.all:
-  freedesktop_enable=True;android_enable=True;win32_enable=True;darwin_enable=True;ios_enable=True;other_enable=True
+  freedesktop_enable=True
+  android_enable=True
+  win32_enable=True
+  darwin_enable=True
+  ios_enable=True
+  other_enable=True
 
 print('System Information')
 
