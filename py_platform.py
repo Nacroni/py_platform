@@ -3,8 +3,9 @@ import platform, argparse, os, time, logging
 
 # This allows for the user to pass arguments to the script, allowing for certain information to be shown:
 parser = argparse.ArgumentParser('py_platform', description='Python-based system information giver using platform module', epilog='thanks! ; main Branch ; by Nacroni')
+parser.add_argument('-a', '--all', help='prints all information (short for fnwdio)', action='store_true')
 parser.add_argument('-f', '--freedesktop', help='prints the freedesktop.org OS release information', action='store_true')
-parser.add_argument('-a', '--android', help='prints Android information', action='store_true')
+parser.add_argument('-n', '--android', help='prints Android information', action='store_true')
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-d', '--darwin', help='prints Darwin information', action='store_true')
 parser.add_argument('-i', '--ios', help='prints iOS information', action='store_true')
@@ -20,6 +21,9 @@ win32_enable = args.win32
 darwin_enable = args.darwin
 ios_enable = args.ios
 other_enable = args.other
+
+if args.all:
+  freedesktop_enable=True;android_enable=True;win32_enable=True;darwin_enable=True;ios_enable=True;other_enable=True
 
 print('System Information')
 

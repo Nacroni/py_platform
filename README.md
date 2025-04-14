@@ -20,11 +20,15 @@ You can use `py_platform` by opening it through [Python](https://python.org/). *
 
 ### Arguments
 
+#### All info : `-a`, `--all`
+
+This argument shows all of the arguments shown below.
+
 #### Freedesktop OS Release info : `-f`, `--freedesktop`
 
 This argument shows the output of `platform.freedesktop_os_release()`, which shows JSON-formatted information about your system.
 
-#### Android info : `-a`, `--android`
+#### Android info : `-n`, `--android`
 
 > [!IMPORTANT]
 > Not every Python version supports this argument.

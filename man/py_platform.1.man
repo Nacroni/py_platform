@@ -8,7 +8,7 @@
 
 .SH SYNOPSIS
 .B py_platform 
-[ -h ] [ --help ] [ -f ] [ --freedesktop ] [ -a ] [ --android ] [ -w ] [ --win32 ] [ -d ] [ --darwin ] [ -i ] [ --ios ] [ -o ] [ --other ]
+[ -h ] [ --help ] [-a] [--all] [ -f ] [ --freedesktop ] [ -n ] [ --android ] [ -w ] [ --win32 ] [ -d ] [ --darwin ] [ -i ] [ --ios ] [ -o ] [ --other ]
 
 .SH DESCRIPTION
 .B py_platform
@@ -18,7 +18,9 @@ is a Python script that shows information about your current system using the pl
 .B py_platform
 
 .B py_platform
--fawdio /
+-a /
+.B py_platform
+-fnwdio /
 .B py_platform
 --freedesktop --android --win32 --darwin --ios --other
 
@@ -32,10 +34,13 @@ is a Python script that shows information about your current system using the pl
 .SS -h, --help
 Shows help and exits
 
+.SS -a, --all
+Shows all arguments (short for fnwdio)
+
 .SS -f, --freedesktop
 Shows freedesktop.org OS release information in JSON in the normal output
 
-.SS -a, --android
+.SS -n, --android
 Shows Android information in the normal output
 
 .SS -w, --win32
