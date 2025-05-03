@@ -9,7 +9,6 @@ parser.add_argument('-n', '--android', help='prints Android information', action
 parser.add_argument('-w', '--win32', help='prints Win32 information', action='store_true')
 parser.add_argument('-d', '--darwin', help='prints Darwin information', action='store_true')
 parser.add_argument('-i', '--ios', help='prints iOS information', action='store_true')
-parser.add_argument('-o', '--other', help='prints other information', action='store_true')
 args = parser.parse_args()
 
 logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.DEBUG)
@@ -20,7 +19,6 @@ android_enable = args.android
 win32_enable = args.win32
 darwin_enable = args.darwin
 ios_enable = args.ios
-other_enable = args.other
 
 if args.all:
   freedesktop_enable=True
@@ -28,7 +26,10 @@ if args.all:
   win32_enable=True
   darwin_enable=True
   ios_enable=True
-  other_enable=True
+
+if not os.path.exists('/etc/os-release') or not os.path.exists('/usr/lib/os-release'):
+  logging.warning('freedesktop.org information not available. turning off argument.')
+  freedesktop_enable = False
 
 print('System Information')
 
@@ -80,8 +81,3 @@ print(f'    Build:          {platform.python_build()}'         )
 print(f'    Compiler:       {platform.python_compiler()}'      )
 print(f'    Implementation: {platform.python_implementation()}')
 print(f'    Revision:       {platform.python_revision()}'      )
-
-if other_enable:
-  print('\nOther Information')
-  #    (f'    name:         {var}'                )
-  print(f'    libc Version: {platform.libc_ver()}')

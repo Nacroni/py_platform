@@ -1,6 +1,6 @@
 .\" manpage for py_platform
 .\" groff, troff, whatever. view it with man
-.TH py_platform 1 "14 Apr 2025" "User Commands" "py_platform Manual"
+.TH py_platform 1 "23 Apr 2025" "User Commands" "py_platform Manual"
 
 .SH NAME
 .B py_platform 
@@ -8,7 +8,7 @@
 
 .SH SYNOPSIS
 .B py_platform 
-[ -h ] [ --help ] [-a] [--all] [ -f ] [ --freedesktop ] [ -n ] [ --android ] [ -w ] [ --win32 ] [ -d ] [ --darwin ] [ -i ] [ --ios ] [ -o ] [ --other ]
+[ -h ] [ --help ] [-a] [--all] [ -f ] [ --freedesktop ] [ -n ] [ --android ] [ -w ] [ --win32 ] [ -d ] [ --darwin ] [ -i ] [ --ios ]
 
 .SH DESCRIPTION
 .B py_platform
@@ -22,7 +22,7 @@ is a Python script that shows information about your current system using the pl
 .B py_platform
 -fnwdio /
 .B py_platform
---freedesktop --android --win32 --darwin --ios --other
+--freedesktop --android --win32 --darwin --ios
 
 .B py_platform
 -h /
@@ -52,12 +52,9 @@ Shows Darwin information in the normal output
 .SS -i, --ios
 Shows iOS information in the normal output
 
-.SS -o, --other
-Shows other information in the normal output
-
 .SH AUTHOR
 .SS Owner / Creator
-Nacroni - E-Mail: thespokenone209@hotmail.com
+MkRL - E-Mail: thespokenone209@hotmail.com
 
 .SH COPYRIGHT
 GPLv3 License, can be found in the source repo as 

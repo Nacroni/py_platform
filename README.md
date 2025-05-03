@@ -62,10 +62,6 @@ This argument shows the output of `platform.ios_ver()`.
 
 - **`platform.ios_ver()`** / **iOS Version**: Shows the version of iOS you are running.
 
-#### Other info : `-o`, `--other`
-
-This argument shows the output of `platform.java_ver()` and `platform.libc_ver()`.
-
 #### Help : `-h`, `--help`
 
 This argument shows help about how to use the script.
